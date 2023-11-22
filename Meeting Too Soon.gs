@@ -9,8 +9,15 @@ function getConfig_(sheetID) {
   var sheet = ss.getSheets()[0];
   var hours = sheet.getRange("B1").getValues().flat().filter(r => r != "");
   return hours[0].toString();
-
 }
+
+function getText_(sheetID) {
+  var ss = SpreadsheetApp.openById(sheetID)
+  var sheet = ss.getSheets()[0];
+  var text = sheet.getRange("B2").getValues().flat().filter(r => r != "");
+  return text[0].toString();
+}
+
 function sendReason_(sender, subject, hours) {
   Logger.log("notify sender:  " + sender);
   var message = "You attempted to schedule a meeting without adequate notice.\n\nPlease schedule during my normal work hours and with at least " + hours + " hours notice.\n\nI understand emergencies occure, if so please contact by instant message prior to scheduling and I will make every effort to assist you, or get the help you need.\n";
