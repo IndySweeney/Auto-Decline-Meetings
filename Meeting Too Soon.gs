@@ -25,7 +25,7 @@ function MeetingTooSoon() {
 Update SheetID variable below needs to contain the document ID in your google drive.   
 This sheet should be in your personal google drive -  an .xlsx is included as a sample
 
-A trigger needs to be created to call this scirpt when the calendar is updated.
+A trigger needs to be created to call this script when the calendar is updated.
 //
 
 
@@ -48,13 +48,13 @@ A trigger needs to be created to call this scirpt when the calendar is updated.
 
     // determine if meeting created by a VIP, 'me', or has already been accepted/declined, if so stop.
     // else will reject the message.
-    // VIp.IndexOf fucntionwill reutnn -1 for NON VIP.  >= 0 are indexes of spreadsheet
+    // VIp.IndexOf function will return -1 for NON VIP.  >= 0 are indexes of spreadsheet
 
     if (VIP.indexOf(events[i].getCreators().toString()) != -1 ||
       events[i].getCreators() == Session.getEffectiveUser().getEmail() ||
       events[i].getMyStatus() != "INVITED") {
 
-        Logger.log("Event "+i+" has been deteremined to be from a VIP, my own event, or already accepted/declind");
+        Logger.log("Event "+i+" has been determined to be from a VIP, my own event, or already accepted/declined");
 
         } else {
             if (NormDiff < (hours * 3600)) {
