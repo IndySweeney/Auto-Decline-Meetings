@@ -30,7 +30,7 @@ A trigger needs to be created to call this script when the calendar is updated.
 
 
 
-  var sheetID = "< __ EDI THIS VALUE PER THE INSTRUCTION PROVIDED ___>";   // OBTAINED MY URL FOR SHEET CONTINAING CONFIG.   Column A contains VIP emails.  B1 containes # hoours
+  var sheetID = "< __ EDI THIS VALUE PER THE INSTRUCTION PROVIDED ___>";   // OBTAINED MY URL FOR SHEET CONTINAING CONFIG.   Column A contains VIP emails which are excluded from auto-decline.  B1 containes # hours that are declined.
   var VIP = getVIP_(sheetID);
   var hours = getConfig_(sheetID);
   var now = new Date();
